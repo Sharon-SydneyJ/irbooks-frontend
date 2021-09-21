@@ -17,7 +17,7 @@ export default function UserContainer() {
     return users.map(user => <User user={user} updateUser={updateUser} deleteUser={deleteUser} key={user.id} />)
   }
 
-//  DELETE
+  
  function deleteUser(user) {
    fetch(BASE_URL + 'users/' + user.id, {
      method: "DELETE"
@@ -48,10 +48,10 @@ export default function UserContainer() {
  
 
   return(
-    <div>
+    <div className="user-container">
       {users && populateUsers()}
 
     </div>
     
-  )
+  );
 }

@@ -18,7 +18,7 @@ const user = {first_name, last_name, user_name, email};
 //       console.log(user);
 
 // CREATE
-fetch('http://127.0.0.1:3000/users', {
+fetch('http://localhost:3000/users', {
             method: `POST`,
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user)
@@ -30,6 +30,8 @@ fetch('http://127.0.0.1:3000/users', {
         })
 
     }
+
+
     return (
 
   <form onSubmit={ handleSubmit } className="cmdUser-form">
@@ -50,7 +52,7 @@ fetch('http://127.0.0.1:3000/users', {
 
      <label className="form-label">User Name</label>
       <input type="text"
-      placeholder='Creat a User Name' 
+      placeholder='Create a User Name' 
       value={ user_name }
       onChange={(e) => setUserName(e.target.value)} />
 
@@ -62,7 +64,13 @@ fetch('http://127.0.0.1:3000/users', {
   
     
   <button>Submit</button>
-  
+<br />
+<br />
+<br />
+  <p>First Name: { first_name }</p>
+  <p>Last Name: { last_name }</p>
+  <p>User Name; { user_name }</p>
+  <p>Email Address: { email }</p>
   </form>
 );
     }

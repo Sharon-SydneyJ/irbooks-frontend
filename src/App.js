@@ -4,6 +4,8 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import UserContainer from './components/UserContainer';
 import User from './components/User';
+import AddBook  from './components/AddBook';
+import BookContainer from './components/BookContainer';
 import './App.css';
 
 function App() {
@@ -23,6 +25,13 @@ function App() {
        <Route path="/User">
        <User />
        </Route>
+       <Route path="/AddBook">
+         <AddBook />
+       </Route>
+       <Route path="/BookContainer">
+         <BookContainer />
+       </Route>
+      
       </Switch>
      </div>
 
@@ -30,5 +39,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

@@ -1,6 +1,8 @@
 import UserCard from "./UserCard";
 
 
+
+
 const Home = () => {
     return (
         <div className="home">
@@ -10,6 +12,8 @@ const Home = () => {
 
         <p>To enter the site please register below and create a username.</p>
         <UserCard />
+        
+        
 
     
         </div>
