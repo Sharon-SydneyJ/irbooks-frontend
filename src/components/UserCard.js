@@ -14,8 +14,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
 const user = {first_name, last_name, user_name, email};
 
-//     const postData = () => {
-//       console.log(user);
+
 
 // CREATE
 fetch('http://localhost:3000/users', {

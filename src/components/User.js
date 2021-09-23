@@ -3,6 +3,7 @@ import React from 'react'
 import { Image, List } from "semantic-ui-react";
 
 
+
 export default function User({user}) {
     
   
@@ -26,14 +27,11 @@ export default function User({user}) {
         
 
         </div>
-      )
+    )
+
+    
+    }
+
       
       
 
-
-
-
-
-        
-
-}

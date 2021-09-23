@@ -13,6 +13,8 @@ export default function Book({book, updateBook, deleteBook, initialDelay=0}) {
         return () => clearTimeout(timeout)
       }, [initialDelay])
 
+      
+
     function handleChange(e) {
         const updatedValue = {...newBook}
         updatedValue[e.target.name] = e.target.value;
@@ -62,7 +64,7 @@ return(
               onChange={handleChange}
             />
              <input name="year_published" value={newBook.year_published} onChange={handleChange} />
-            <button type="submit">Update Gym</button>
+            <button type="submit">Update Book</button>
           </form>
         </>
       )}

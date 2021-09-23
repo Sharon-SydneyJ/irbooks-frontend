@@ -7,16 +7,23 @@ const BookshelfContainer = () => {
 
   // READ
   useEffect (() => {
-    fetch(BASE_URL + "booksshelves/" + id)
+    fetch(BASE_URL + "booksshelves")
     .then(res => res.json())
-    .then(json => setBookhelf(json))
-  }, [id]);
+    .then(json => setBookshelves(json))
+  }, []);
 
   function populateBookshelves() {
-    return bookshelves.map(bookshelf => <Bookshelf bookshelf={bookshelf} updateBookshelf={updateBookshelf} key={bookshelf.id} />)
+    return bookshelves.map(bookshelf => <Bookshelf bookshelf={bookshelf} updateBookshelf={updateBookshelf} deleteBookshelf={deleteBookshelf} key={bookshelf.id} />)
   }
 
-  
+  function deleteBookshelf(bookshelf) {
+    fetch(BASE_URL + 'bookshelves/' + bookshelf.id, {
+      method: "DELETE"
+    })
+    const newBookshelves = bookshelves.filter(nbooksh => nbooksh.id !== bookshelf.id)
+    setBookshelves(newBookshelves)
+ 
+   }
  
 // UPDATE
   function updateBookshelf(bookshelf) {
@@ -28,11 +35,11 @@ const BookshelfContainer = () => {
         "Content-Type": "application/json"
       }
     })
-    const newBookshelves = bookshelves.map (nbookshelf => {
-      if (nbookshelf.id === bookshelf.id) {
-        nbookshelf = bookshelf
+    const newBookshelves = bookshelves.map (nbooksh => {
+      if (nbooksh.id === bookshelf.id) {
+        nbooksh = bookshelf
       }
-      return nbookshelf
+      return nbooksh
     })
     setBookshelves(newBookshelves)
   }
